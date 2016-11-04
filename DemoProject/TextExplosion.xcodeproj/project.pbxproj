@@ -12,6 +12,7 @@
 		FA3A26C41DC7BC5D00023423 /* AYTextLabelCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3A26BF1DC7BC5D00023423 /* AYTextLabelCollectionView.m */; };
 		FA3A26C51DC7BC5D00023423 /* AYTextLabelCollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3A26C11DC7BC5D00023423 /* AYTextLabelCollectionViewLayout.m */; };
 		FA6FDA441DB9B5E500CB3F82 /* NSString+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = FA6FDA431DB9B5E500CB3F82 /* NSString+Extension.m */; };
+		FAB2AB9D1DCA2870002FE52C /* AYCopyHistoryTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = FAB2AB9C1DCA2870002FE52C /* AYCopyHistoryTableView.m */; };
 		FAF0636D1DB905810002CF44 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF0636C1DB905810002CF44 /* main.m */; };
 		FAF063701DB905810002CF44 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF0636F1DB905810002CF44 /* AppDelegate.m */; };
 		FAF063761DB905810002CF44 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAF063741DB905810002CF44 /* Main.storyboard */; };
@@ -30,6 +31,8 @@
 		FA3A26C11DC7BC5D00023423 /* AYTextLabelCollectionViewLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AYTextLabelCollectionViewLayout.m; sourceTree = "<group>"; };
 		FA6FDA421DB9B5E500CB3F82 /* NSString+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Extension.h"; sourceTree = "<group>"; };
 		FA6FDA431DB9B5E500CB3F82 /* NSString+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Extension.m"; sourceTree = "<group>"; };
+		FAB2AB9B1DCA2870002FE52C /* AYCopyHistoryTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AYCopyHistoryTableView.h; sourceTree = "<group>"; };
+		FAB2AB9C1DCA2870002FE52C /* AYCopyHistoryTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AYCopyHistoryTableView.m; sourceTree = "<group>"; };
 		FAF063681DB905810002CF44 /* TextExplosion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TextExplosion.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAF0636C1DB905810002CF44 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FAF0636E1DB905810002CF44 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -54,14 +57,11 @@
 		FA3A26B91DC7BC5D00023423 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				FA3A26BA1DC7BC5D00023423 /* AYLabelCollectionViewCell.h */,
-				FA3A26BB1DC7BC5D00023423 /* AYLabelCollectionViewCell.m */,
 				FA3A26BC1DC7BC5D00023423 /* AYTextExplosionViewController.h */,
 				FA3A26BD1DC7BC5D00023423 /* AYTextExplosionViewController.m */,
-				FA3A26BE1DC7BC5D00023423 /* AYTextLabelCollectionView.h */,
-				FA3A26BF1DC7BC5D00023423 /* AYTextLabelCollectionView.m */,
-				FA3A26C01DC7BC5D00023423 /* AYTextLabelCollectionViewLayout.h */,
-				FA3A26C11DC7BC5D00023423 /* AYTextLabelCollectionViewLayout.m */,
+				FAB2AB9E1DCCEB38002FE52C /* Collection View */,
+				FAB2AB9B1DCA2870002FE52C /* AYCopyHistoryTableView.h */,
+				FAB2AB9C1DCA2870002FE52C /* AYCopyHistoryTableView.m */,
 			);
 			name = Classes;
 			path = ../../Classes;
@@ -75,6 +75,19 @@
 			);
 			name = PINStirngExtension;
 			path = AFNetworking/PINStirngExtension;
+			sourceTree = "<group>";
+		};
+		FAB2AB9E1DCCEB38002FE52C /* Collection View */ = {
+			isa = PBXGroup;
+			children = (
+				FA3A26BE1DC7BC5D00023423 /* AYTextLabelCollectionView.h */,
+				FA3A26BF1DC7BC5D00023423 /* AYTextLabelCollectionView.m */,
+				FA3A26BA1DC7BC5D00023423 /* AYLabelCollectionViewCell.h */,
+				FA3A26BB1DC7BC5D00023423 /* AYLabelCollectionViewCell.m */,
+				FA3A26C01DC7BC5D00023423 /* AYTextLabelCollectionViewLayout.h */,
+				FA3A26C11DC7BC5D00023423 /* AYTextLabelCollectionViewLayout.m */,
+			);
+			name = "Collection View";
 			sourceTree = "<group>";
 		};
 		FAF0635F1DB905810002CF44 = {
@@ -202,6 +215,7 @@
 				FAF0636D1DB905810002CF44 /* main.m in Sources */,
 				FA6FDA441DB9B5E500CB3F82 /* NSString+Extension.m in Sources */,
 				FA3A26C51DC7BC5D00023423 /* AYTextLabelCollectionViewLayout.m in Sources */,
+				FAB2AB9D1DCA2870002FE52C /* AYCopyHistoryTableView.m in Sources */,
 				FA3A26C41DC7BC5D00023423 /* AYTextLabelCollectionView.m in Sources */,
 				FA3A26C21DC7BC5D00023423 /* AYLabelCollectionViewCell.m in Sources */,
 			);

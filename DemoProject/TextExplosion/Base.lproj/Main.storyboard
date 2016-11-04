@@ -52,20 +52,54 @@
                                     <constraint firstItem="YT9-s9-Wss" firstAttribute="width" secondItem="pWN-1y-AGX" secondAttribute="width" id="u2F-pS-bNm"/>
                                 </constraints>
                             </stackView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="36" sectionHeaderHeight="4" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="iES-n3-Koy" customClass="AYCopyHistoryTableView">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="110" id="tZr-5b-FuZ"/>
+                                </constraints>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="historyCell" id="tzP-08-znU">
+                                        <rect key="frame" x="0.0" y="4" width="343" height="36"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tzP-08-znU" id="hga-DM-m4X">
+                                            <frame key="frameInset" width="343" height="35"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="2001" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PaQ-55-Jb5">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" red="0.50196081400000003" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="PaQ-55-Jb5" firstAttribute="leading" secondItem="hga-DM-m4X" secondAttribute="leadingMargin" id="Ba6-cu-Yw4"/>
+                                                <constraint firstItem="PaQ-55-Jb5" firstAttribute="centerY" secondItem="hga-DM-m4X" secondAttribute="centerY" id="Pbu-vl-wRB"/>
+                                                <constraint firstItem="PaQ-55-Jb5" firstAttribute="top" secondItem="hga-DM-m4X" secondAttribute="topMargin" constant="3" id="R24-gZ-rcZ"/>
+                                                <constraint firstItem="PaQ-55-Jb5" firstAttribute="trailing" secondItem="hga-DM-m4X" secondAttribute="trailingMargin" id="lBz-Dh-3ul"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <sections/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="PaA-h6-teq" firstAttribute="top" secondItem="zT9-Q8-xHe" secondAttribute="bottom" constant="8" id="95m-He-2Y8"/>
+                            <constraint firstItem="zT9-Q8-xHe" firstAttribute="top" secondItem="iES-n3-Koy" secondAttribute="bottom" constant="15" id="CKX-V2-1lk"/>
+                            <constraint firstItem="iES-n3-Koy" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Sfi-DO-s1E"/>
                             <constraint firstItem="PaA-h6-teq" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="Tca-Ey-FcX"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="PaA-h6-teq" secondAttribute="bottom" constant="8" id="ThJ-g6-L8B"/>
                             <constraint firstItem="zT9-Q8-xHe" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="X6a-tn-WLN"/>
+                            <constraint firstItem="iES-n3-Koy" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="efL-kA-XOG"/>
                             <constraint firstItem="PaA-h6-teq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="fgq-pk-KM9"/>
-                            <constraint firstItem="zT9-Q8-xHe" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" symbolic="YES" id="iTa-s0-fya"/>
                             <constraint firstItem="zT9-Q8-xHe" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="tEi-Dv-PGv"/>
+                            <constraint firstItem="iES-n3-Koy" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="yuN-ux-pt0"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="wordsCollectionView" destination="zT9-Q8-xHe" id="Sei-GM-g82"/>
+                        <outlet property="historyTableView" destination="iES-n3-Koy" id="aM2-Ug-qfG"/>
+                        <outlet property="wordsCollectionView" destination="zT9-Q8-xHe" id="zCQ-18-eWR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

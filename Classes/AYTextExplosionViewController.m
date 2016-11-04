@@ -9,10 +9,12 @@
 #import "AYTextExplosionViewController.h"
 #import "AYTextLabelCollectionView.h"
 #import "NSString+Extension.h"
+#import "AYCopyHistoryTableView.h"
 
 @interface AYTextExplosionViewController ()
 
 @property (weak, nonatomic) IBOutlet AYTextLabelCollectionView *wordsCollectionView;
+@property (weak, nonatomic) IBOutlet AYCopyHistoryTableView *historyTableView;
 
 @property (nonatomic, copy) NSString *analyzedString;
 
@@ -22,21 +24,38 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    __weak typeof(self) weakSelf = self;
+    [self.historyTableView setSelectAction:^(NSString *copiedString) {
+        if (copiedString.length) {
+            [[UIPasteboard generalPasteboard] setString:copiedString];
+            [weakSelf analyzeCopiedStringNeedAddToHistory:NO];
+        }
+    }];
+    
     [self.wordsCollectionView setAllowsMultipleSelection:YES];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(analyzeCopiedString) name:UIApplicationDidBecomeActiveNotification object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(appDidBecomeActive) name:UIApplicationDidBecomeActiveNotification object:nil];
 }
 
 - (void)dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
-- (void)analyzeCopiedString {
+- (void)appDidBecomeActive {
+    [self analyzeCopiedStringNeedAddToHistory:YES];
+}
+
+- (void)analyzeCopiedStringNeedAddToHistory:(BOOL)needAddToHistory {
     NSString *copiedString = [UIPasteboard generalPasteboard].string;
     
     if ([copiedString isEqualToString:self.analyzedString]) {
         return;
     } else {
         self.analyzedString = copiedString;
+        if (needAddToHistory) {
+            [self.historyTableView addCopiedString:copiedString];
+        }
     }
     
     if (copiedString.length) {
